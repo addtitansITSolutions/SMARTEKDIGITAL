@@ -1,4 +1,6 @@
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import AboutIntro from "../sections/home/AboutIntro";
 import Hero from "../sections/home/Hero";
 
 const Home = () => {
@@ -7,8 +9,9 @@ const Home = () => {
       <Navbar />
       <main>
         <Hero />
-        <Hero />
+        <AboutIntro />
       </main>
+      <Footer />
     </>
   );
 };

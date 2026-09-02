@@ -118,9 +118,10 @@ const Hero = () => {
 
                   {/* Eyebrow */}
                   <motion.div
-                    variants={textVariants}
-                    initial="initial"
-                    animate="animate"
+                    key={`eyebrow-${activeSlide}`}
+                    initial={{ opacity: 0, y: 25 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7, delay: 0 }}
                     className="mb-6 flex items-center gap-4 sm:mb-8"
                   >
                     <span className="h-px w-10 bg-[var(--primary)] sm:w-16" />
@@ -143,9 +144,10 @@ const Hero = () => {
 
                     {/* Main title */}
                     <motion.h1
-                      variants={textVariants}
-                      initial="initial"
-                      animate="animate"
+                      key={`heading-${activeSlide}`}
+                      initial={{ opacity: 0, y: 45 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.12 }}
                       className="relative font-[var(--font-display)] text-[clamp(4rem,14vw,11.5rem)] font-light uppercase leading-[0.82] tracking-[-0.065em]"
                     >
                       <span className="block">
@@ -160,9 +162,10 @@ const Hero = () => {
 
                   {/* Description + CTA */}
                   <motion.div
-                    variants={textVariants}
-                    initial="initial"
-                    animate="animate"
+                    key={`description-${activeSlide}`}
+                    initial={{ opacity: 0, y: 25 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7, delay: 0.25 }}
                     className="mt-8 flex flex-col gap-7 sm:mt-10 sm:flex-row sm:items-center sm:gap-10"
                   >
                     <p className="max-w-md font-[var(--font-body)] text-sm leading-7 text-white/65 sm:text-base">
