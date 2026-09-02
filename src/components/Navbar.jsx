@@ -7,75 +7,106 @@ const navItems = [
   { name: "About", path: "/about" },
   { name: "Services", path: "/services" },
   { name: "Projects", path: "/projects" },
-//   { name: "Blog", path: "/blog" },
+  // { name: "Blog", path: "/blog" },
   { name: "Contact", path: "/contact" },
 ];
 
-const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
+const Navbar = ({ forceScrolled = false }) => {
+  const [scrolled, setScrolled] = useState(forceScrolled);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
+      setScrolled(forceScrolled || window.scrollY > 40);
     };
+
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [forceScrolled]);
 
+  /* --------------------------------
+     Lock page when mobile menu opens
+  -------------------------------- */
   useEffect(() => {
-    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    }
 
     return () => {
       document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
     };
   }, [mobileOpen]);
 
+  /* --------------------------------
+     Close mobile menu on resize
+  -------------------------------- */
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setMobileOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <header
-      className={`fixed top-0 left-0 z-50 w-full transition-all duration-500 ${
+      className={`fixed inset-x-0 top-0 z-[100] transition-all duration-500 ${
         scrolled
           ? "bg-white/95 shadow-sm backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-[88px] w-full max-w-[1440px] items-center justify-between px-6 lg:px-10 xl:px-12">
+      {/* --------------------------------
+          Navbar
+      -------------------------------- */}
+      <div className="relative mx-auto flex h-[88px] w-full max-w-[1440px] items-center justify-between px-6 lg:px-10 xl:px-12">
 
         {/* Logo */}
         <NavLink
           to="/"
           onClick={() => setMobileOpen(false)}
-          className="relative z-50 flex items-center gap-3"
+          className="relative z-[110] flex items-center gap-3"
         >
-          {/* Temporary text-based brand mark */}
+          {/* Temporary brand mark */}
           <div className="relative flex h-11 w-11 items-center justify-center">
             <div className="absolute left-0 top-0 h-7 w-7 bg-[var(--secondary)]" />
+
             <div className="absolute bottom-0 right-0 h-7 w-7 bg-[var(--primary)]" />
 
-            <span
-              className={`relative z-10 font-[var(--font-display)] text-sm font-medium ${
-                scrolled ? "text-white" : "text-white"
-              }`}
-            >
+            <span className="relative z-10 font-[var(--font-display)] text-sm font-medium text-white">
               SD
             </span>
           </div>
 
-          <div className="hidden sm:block leading-none">
+          <div className="hidden leading-none sm:block">
             <span
-              className={`block font-[var(--font-display)] text-[15px] font-semibold tracking-[0.16em] ${
-                scrolled ? "text-[var(--dark)]" : "text-white"
+              className={`block font-[var(--font-display)] text-[15px] font-semibold tracking-[0.16em] transition-colors duration-500 ${
+                scrolled
+                  ? "text-[var(--dark)]"
+                  : "text-white"
               }`}
             >
               SMARTEK
             </span>
 
             <span
-              className={`mt-1 block text-[8px] font-semibold tracking-[0.32em] ${
+              className={`mt-1 block text-[8px] font-semibold tracking-[0.32em] transition-colors duration-500 ${
                 scrolled
                   ? "text-[var(--secondary)]"
                   : "text-white/70"
@@ -86,19 +117,18 @@ const Navbar = () => {
           </div>
         </NavLink>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
+        {/* --------------------------------
+            Desktop Navigation
+        -------------------------------- */}
+        <nav className="hidden items-center gap-8 lg:flex xl:gap-10">
           {navItems.map((item) => (
             <NavLink
               key={item.name}
               to={item.path}
-              className={({ isActive }) =>
-                `group relative py-2 font-[var(--font-body)] text-[12px] font-semibold uppercase tracking-[0.12em] transition-colors duration-300 ${
-                  scrolled
-                    ? "text-[var(--dark)]"
-                    : "text-white"
-                }`
-              }
+              style={{
+                color: scrolled ? "var(--dark)" : "#ffffff",
+              }}
+              className="group relative py-2 font-[var(--font-body)] text-[12px] font-semibold uppercase tracking-[0.12em] transition-colors duration-300"
             >
               {({ isActive }) => (
                 <>
@@ -117,14 +147,22 @@ const Navbar = () => {
           ))}
         </nav>
 
-        {/* Desktop CTA */}
+        {/* --------------------------------
+            Desktop CTA
+        -------------------------------- */}
         <div className="hidden lg:block">
           <NavLink
             to="/contact"
-            className={`group flex items-center gap-2 border px-5 py-3 text-[11px] font-bold uppercase tracking-[0.12em] transition-all duration-300 ${
+            style={{
+              color: scrolled ? "var(--dark)" : "#ffffff",
+              borderColor: scrolled
+                ? "var(--primary)"
+                : "rgba(255, 255, 255, 0.6)",
+            }}
+            className={`group flex items-center gap-2 border px-5 py-3 font-[var(--font-body)] text-[11px] font-bold uppercase tracking-[0.12em] transition-all duration-300 ${
               scrolled
-                ? "border-[var(--primary)] text-[var(--dark)] hover:bg-[var(--primary)] hover:text-white"
-                : "border-white/60 text-white hover:border-[var(--primary)] hover:bg-[var(--primary)]"
+                ? "hover:bg-[var(--primary)] hover:text-white"
+                : "hover:border-[var(--primary)] hover:bg-[var(--primary)]"
             }`}
           >
             Let's Talk
@@ -137,56 +175,94 @@ const Navbar = () => {
           </NavLink>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* --------------------------------
+            Mobile Menu Button
+        -------------------------------- */}
         <button
           type="button"
-          aria-label="Toggle menu"
+          aria-label={
+            mobileOpen ? "Close menu" : "Open menu"
+          }
+          aria-expanded={mobileOpen}
           onClick={() => setMobileOpen((prev) => !prev)}
-          className={`relative z-50 flex h-11 w-11 items-center justify-center lg:hidden ${
-            scrolled ? "text-[var(--dark)]" : "text-white"
+          className={`relative z-[110] flex h-11 w-11 items-center justify-center lg:hidden transition-colors duration-300 ${
+            mobileOpen
+              ? "text-white"
+              : scrolled
+                ? "text-[var(--dark)]"
+                : "text-white"
           }`}
         >
-          {mobileOpen ? <X size={25} /> : <Menu size={25} />}
+          {mobileOpen ? (
+            <X size={25} strokeWidth={1.8} />
+          ) : (
+            <Menu size={25} strokeWidth={1.8} />
+          )}
         </button>
-      </div>
 
-      {/* Mobile Menu */}
-      <div
-        className={`fixed inset-0 z-40 bg-[var(--dark)] transition-all duration-500 lg:hidden ${
-          mobileOpen
-            ? "visible opacity-100"
-            : "invisible opacity-0"
-        }`}
-      >
-        <div className="flex h-full flex-col justify-center px-8 sm:px-12">
-          <nav className="flex flex-col gap-5">
-            {navItems.map((item, index) => (
-              <NavLink
-                key={item.name}
-                to={item.path}
-                onClick={() => setMobileOpen(false)}
-                className="group flex items-center gap-4 font-[var(--font-display)] text-4xl font-light text-white transition-colors hover:text-[var(--primary)] sm:text-5xl"
+        {/* --------------------------------
+            Mobile Menu
+        -------------------------------- */}
+        <div
+          className={`absolute inset-x-0 top-0 h-screen bg-[var(--dark)] transition-all duration-500 lg:hidden ${
+            mobileOpen
+              ? "visible translate-y-0 opacity-100"
+              : "invisible -translate-y-3 opacity-0 pointer-events-none"
+          }`}
+        >
+          <div className="flex h-full flex-col justify-center px-8 sm:px-12">
+            {/* Navigation */}
+            <nav className="flex flex-col gap-5">
+              {navItems.map((item, index) => (
+                <NavLink
+                  key={item.name}
+                  to={item.path}
+                  onClick={() => setMobileOpen(false)}
+                  className={({ isActive }) =>
+                    `group flex items-center gap-4 font-[var(--font-display)] text-4xl font-light transition-colors duration-300 sm:text-5xl ${
+                      isActive
+                        ? "text-[var(--primary)]"
+                        : "text-white hover:text-[var(--primary)]"
+                    }`
+                  }
+                >
+                  {({ isActive }) => (
+                    <>
+                      <span
+                        className={`text-xs transition-colors duration-300 ${
+                          isActive
+                            ? "text-[var(--primary)]"
+                            : "text-white/30"
+                        }`}
+                      >
+                        0{index + 1}
+                      </span>
+
+                      {item.name}
+
+                      <ArrowUpRight
+                        size={20}
+                        className="ml-1 opacity-0 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:opacity-100"
+                      />
+                    </>
+                  )}
+                </NavLink>
+              ))}
+            </nav>
+
+            {/* Contact */}
+            <div className="mt-14 border-t border-white/10 pt-6">
+              <p className="font-[var(--font-body)] text-xs uppercase tracking-[0.2em] text-white/40">
+                Start a conversation
+              </p>
+
+              <a
+                href="mailto:hello@smartekdigital.com"
+                className="mt-2 inline-block font-[var(--font-body)] text-lg text-white transition-colors duration-300 hover:text-[var(--primary)]"
               >
-                <span className="text-xs text-white/30">
-                  0{index + 1}
-                </span>
-
-                {item.name}
-              </NavLink>
-            ))}
-          </nav>
-
-          <div className="mt-14 border-t border-white/10 pt-6">
-            <p className="text-xs uppercase tracking-[0.2em] text-white/40">
-              Start a conversation
-            </p>
-
-            <a
-              href="mailto:hello@smartekdigital.com"
-              className="mt-2 inline-block text-lg text-white transition-colors hover:text-[var(--primary)]"
-            >
-              hello@smartekdigital.com
-            </a>
+                hello@smartekdigital.com
+              </a>
+            </div>
           </div>
         </div>
       </div>

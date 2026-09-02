@@ -45,7 +45,7 @@ const Footer = () => {
             {/* Label */}
             <div className="shrink-0">
             <div className="flex items-center gap-3">
-                <span className="h-[2px] w-8 bg-[var(--primary)]" />
+                {/* <span className="h-[2px] w-8 bg-[var(--primary)]" /> */}
 
                 <span className="font-[var(--font-body)] text-xs font-bold tracking-[0.2em] text-white/60 uppercase">
                 Have a project in mind?
@@ -90,15 +90,19 @@ const Footer = () => {
           <div>
             <a
               href="/"
-              className="inline-flex items-center font-[var(--font-display)] text-2xl font-bold tracking-[-0.04em]"
+              className="inline-flex items-center font-[var(--font-display)] text-2xl font-bold tracking-[-0.04em] gap-2"
             >
               SMARTEK
-              <span className="text-[var(--primary)]">.</span>
+              <span className="text-[var(--primary)]">DIGITAL </span>
             </a>
 
             <p className="mt-5 max-w-xs font-[var(--font-body)] text-sm leading-6 text-white/50">
               Strategy, creativity and technology working together to build
-              smarter digital experiences.
+              smarter digital experiences. 
+            </p>
+
+            <p className="mt-5 max-w-xs font-[var(--font-body)] text-sm leading-6 text-white/50">
+              Jasola New Delhi, Delhi, India
             </p>
 
             {/* Social links */}
@@ -183,12 +187,12 @@ const Footer = () => {
                 />
 
                 <span className="font-[var(--font-body)] text-sm text-white/70 transition-colors duration-300 group-hover:text-white">
-                  hello@smartekdigital.com
+                  info@smartekdigital.com
                 </span>
               </a>
 
               <a
-                href="tel:+910000000000"
+                href="tel:+155895548855"
                 className="group flex items-start gap-3"
               >
                 <Phone
@@ -198,7 +202,7 @@ const Footer = () => {
                 />
 
                 <span className="font-[var(--font-body)] text-sm text-white/70 transition-colors duration-300 group-hover:text-white">
-                  +91 00000 00000
+                  +1 55895548855
                 </span>
               </a>
 
