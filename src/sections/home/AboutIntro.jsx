@@ -50,10 +50,10 @@ const AboutIntro = () => {
                 delay: 0.08,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="max-w-5xl font-[var(--font-display)] text-4xl font-medium leading-[1.05] tracking-[-0.04em] text-[var(--dark)] sm:text-5xl md:text-6xl lg:text-7xl"
+              className="max-w-5xl font-[var(--font-display)] text-4xl font-medium leading-[1.05] tracking-[-0.04em] text-[var(--dark)] sm:text-3xl md:text-4xl lg:text-5xl"
             >
-              We turn digital ideas{" "}
-              <span className="text-[var(--primary)]">into business growth.</span>
+              Turn the right audience into meaningful business {" "}
+              <span className="text-[var(--primary)]">opportunities with targeted marketing strategies.</span>
             </motion.h2>
 
             {/* Bottom content */}
@@ -70,9 +70,10 @@ const AboutIntro = () => {
                 }}
               >
                 <p className="max-w-2xl font-[var(--font-body)] text-base leading-7 text-[var(--text)] sm:text-lg sm:leading-8">
-                  Smartek Digital combines strategy, creativity and technology
-                  to help brands build stronger digital experiences, reach the
-                  right audience and turn attention into measurable results.
+                  Smartek Digital helps businesses connect with the people who matter, create stronger customer
+                  journeys and turn digital opportunities into measurable outcomes.
+                  From partnerships and ecommerce to mobile and performance campaigns, we make your every
+                  investment count.
                 </p>
 
                 <div className="mt-8">
@@ -81,7 +82,7 @@ const AboutIntro = () => {
                     className="group inline-flex items-center gap-3 font-[var(--font-body)] text-sm font-bold tracking-wide text-[var(--dark)]"
                   >
                     <span className="relative">
-                      Let's Work Together
+                      Explore Our Solutions
                       <span className="absolute -bottom-1 left-0 h-[1px] w-full origin-left scale-x-100 bg-[var(--primary)] transition-transform duration-300 group-hover:scale-x-0" />
                     </span>
 

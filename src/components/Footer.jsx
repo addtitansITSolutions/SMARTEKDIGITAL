@@ -97,8 +97,8 @@ const Footer = () => {
             </a>
 
             <p className="mt-5 max-w-xs font-[var(--font-body)] text-sm leading-6 text-white/50">
-              Strategy, creativity and technology working together to build
-              smarter digital experiences. 
+              Smartek Digital combines strategy, creativity and digital expertise together to create meaningful
+              experiences that unlocks new opportunities for growth. 
             </p>
 
             

@@ -4,27 +4,27 @@ import { ArrowUpRight } from "lucide-react";
 const services = [
   {
     number: "01",
-    title: "Digital Marketing",
+    title: "Affiliate Marketing",
     description:
-      "Strategy, campaigns and audience growth designed to put your brand in front of the right people.",
+      "Build stronger partnerships that put your brand in front of audiences ready to take action.",
   },
   {
     number: "02",
-    title: "Performance Marketing",
+    title: "Digital Marketing",
     description:
-      "Data-driven campaigns focused on meaningful actions, stronger conversions and measurable growth.",
+      "Create meaningful connections with your audience across the digital channels.",
   },
   {
     number: "03",
-    title: "SEO",
+    title: "Ecommerce Marketing",
     description:
-      "Search strategies that improve visibility, build authority and create sustainable organic growth.",
+      "Bring the right shoppers to your store and create more opportunities to turn interest into purchases.",
   },
   {
     number: "04",
-    title: "Web Development",
+    title: "Mobile Performance Marketing",
     description:
-      "High-performing digital experiences built around your brand, users and business objectives.",
+      "Reach mobile audiences with campaigns focused on actions that drive business growth.",
   },
   {
     number: "05",
@@ -34,9 +34,9 @@ const services = [
   },
   {
     number: "06",
-    title: "Creative & Design",
+    title: "Performance Marketing",
     description:
-      "Visual identities and digital experiences that make brands more memorable and meaningful.",
+      "Put your marketing efforts behind clear goals, measurable actions and results you can track.",
   },
 ];
 
@@ -118,10 +118,10 @@ const Services = () => {
             }}
             className="max-w-5xl font-[var(--font-display)] text-4xl font-medium leading-[0.98] tracking-[-0.045em] sm:text-4xl md:text-5xl lg:text-6xl"
           >
-            Digital solutions
+            Boost Your Business 
             <br />
-            built to move{" "}
-            <span className="text-white/55">businesses forward.</span>
+            with our Smart{" "}
+            <span className="text-white/55">Digital Solutions.</span>
           </motion.h2>
         </div>
 

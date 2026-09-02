@@ -23,21 +23,21 @@ const stats = [
 const reasons = [
   {
     number: "01",
-    title: "Business First",
+    title: "Business-First Approach",
     description:
-      "Every digital decision starts with your business objectives, audience and growth goals.",
+      "Your marketing spend should foster your vision. We build campaigns around targeted goals.",
   },
   {
     number: "02",
     title: "Data Driven",
     description:
-      "We use insights, performance data and continuous learning to make smarter decisions.",
+      "Our campaigns leverage market analytics, insights and performance data to ensure you make smarter decisions.",
   },
   {
     number: "03",
-    title: "Built to Scale",
+    title: "Scalable Outcomes",
     description:
-      "Our strategies and digital experiences are designed to evolve as your business grows.",
+      "Our marketing strategies are designed to drive clarity. No complicated explanations. No unnecessary layers.",
   },
 ];
 
@@ -95,10 +95,10 @@ const WhyChooseUs = () => {
               }}
               className="max-w-4xl font-[var(--font-display)] text-4xl font-medium leading-[0.98] tracking-[-0.045em] text-[var(--dark)] sm:text-5xl md:text-6xl lg:text-7xl"
             >
-              Built for ambition.
+              Helping Ambitious Brands
               <br />
               <span className="text-[var(--primary)]">
-                Focused on results.
+                Make a Difference
               </span>
             </motion.h2>
 
@@ -113,9 +113,8 @@ const WhyChooseUs = () => {
               }}
               className="mt-8 max-w-2xl font-[var(--font-body)] text-base leading-7 text-[var(--text)] sm:mt-10 sm:text-lg sm:leading-8"
             >
-              We bring strategy, creativity and technology together to help
-              businesses navigate digital growth with clarity, confidence and
-              measurable impact.
+              We help brands find the right audiences, build meaningful connections and create opportunities for
+growth across digital channels.
             </motion.p>
           </div>
         </div>
