@@ -101,12 +101,10 @@ const Footer = () => {
               smarter digital experiences. 
             </p>
 
-            <p className="mt-5 max-w-xs font-[var(--font-body)] text-sm leading-6 text-white/50">
-              Jasola New Delhi, Delhi, India
-            </p>
+            
 
             {/* Social links */}
-            <div className="mt-7 flex flex-wrap gap-5">
+            {/* <div className="mt-7 flex flex-wrap gap-5">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -116,7 +114,7 @@ const Footer = () => {
                   {social.label}
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Explore */}
@@ -191,7 +189,7 @@ const Footer = () => {
                 </span>
               </a>
 
-              <a
+              {/* <a
                 href="tel:+155895548855"
                 className="group flex items-start gap-3"
               >
@@ -204,7 +202,7 @@ const Footer = () => {
                 <span className="font-[var(--font-body)] text-sm text-white/70 transition-colors duration-300 group-hover:text-white">
                   +1 55895548855
                 </span>
-              </a>
+              </a> */}
 
               <div className="flex items-start gap-3">
                 <MapPin
@@ -214,7 +212,7 @@ const Footer = () => {
                 />
 
                 <span className="font-[var(--font-body)] text-sm leading-6 text-white/70">
-                  India
+                  Second Floor, Unit No 204, Udyog Sheel Mahila Samiti, 120 Main Mathura Road, Opp Apollo Hospital, Sarita Vihar, New Delhi, South East Delhi, Delhi, 110076
                 </span>
               </div>
             </div>
