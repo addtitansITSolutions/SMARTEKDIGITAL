@@ -11,11 +11,10 @@ const Footer = () => {
 
   const serviceLinks = [
     { label: "Digital Marketing", href: "#services" },
+    { label: "Affiliate Marketing", href: "#affiliate" },
     { label: "Performance Marketing", href: "#services" },
-    { label: "SEO", href: "#services" },
-    { label: "Web Development", href: "#services" },
+    { label: "Mobile Performance Marketing", href: "#services" },
     { label: "E-commerce", href: "#services" },
-    { label: "Creative & Design", href: "#services" },
   ];
 
   const socialLinks = [
@@ -66,7 +65,7 @@ const Footer = () => {
 
             {/* Button */}
             <a
-                href="#contact"
+                href="/contact"
                 className="group inline-flex w-fit shrink-0 items-center gap-4 font-[var(--font-body)] text-sm font-bold tracking-wide text-white"
             >
                 <span className="relative">
@@ -90,10 +89,13 @@ const Footer = () => {
           <div>
             <a
               href="/"
-              className="inline-flex items-center font-[var(--font-display)] text-2xl font-bold tracking-[-0.04em] gap-2"
+              className="inline-flex items-center"
             >
-              SMARTEK
-              <span className="text-[var(--primary)]">DIGITAL </span>
+              <img
+                src="/logo/smartek-logo.png"
+                alt="Smartek Digital"
+                className="h-auto w-[150px] object-contain sm:w-[165px]"
+              />
             </a>
 
             <p className="mt-5 max-w-xs font-[var(--font-body)] text-sm leading-6 text-white/50">

@@ -81,40 +81,15 @@ const Navbar = ({ forceScrolled = false }) => {
         <NavLink
           to="/"
           onClick={() => setMobileOpen(false)}
-          className="relative z-[110] flex items-center gap-3"
+          className="relative z-[110] flex items-center"
         >
-          {/* Temporary brand mark */}
-          <div className="relative flex h-11 w-11 items-center justify-center">
-            <div className="absolute left-0 top-0 h-7 w-7 bg-[var(--secondary)]" />
-
-            <div className="absolute bottom-0 right-0 h-7 w-7 bg-[var(--primary)]" />
-
-            <span className="relative z-10 font-[var(--font-display)] text-sm font-medium text-white">
-              SD
-            </span>
-          </div>
-
-          <div className="hidden leading-none sm:block">
-            <span
-              className={`block font-[var(--font-display)] text-[15px] font-semibold tracking-[0.16em] transition-colors duration-500 ${
-                scrolled
-                  ? "text-[var(--dark)]"
-                  : "text-white"
-              }`}
-            >
-              SMARTEK
-            </span>
-
-            <span
-              className={`mt-1 block text-[8px] font-semibold tracking-[0.32em] transition-colors duration-500 ${
-                scrolled
-                  ? "text-[var(--secondary)]"
-                  : "text-white/70"
-              }`}
-            >
-              DIGITAL
-            </span>
-          </div>
+          <img
+            src="/logo/smartek-logo.png"
+            alt="Smartek Digital"
+            className={`h-auto w-[150px] object-contain transition-all duration-500 sm:w-[165px] ${
+              scrolled ? "" : "brightness-100"
+            }`}
+          />
         </NavLink>
 
         {/* --------------------------------

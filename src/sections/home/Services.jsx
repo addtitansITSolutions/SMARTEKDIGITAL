@@ -14,11 +14,17 @@ const services = [
     description:
       "Create meaningful connections with your audience across the digital channels.",
   },
+  // {
+  //   number: "03",
+  //   title: "Ecommerce Marketing",
+  //   description:
+  //     "Bring the right shoppers to your store and create more opportunities to turn interest into purchases.",
+  // },
   {
     number: "03",
-    title: "Ecommerce Marketing",
+    title: "Performance Marketing",
     description:
-      "Bring the right shoppers to your store and create more opportunities to turn interest into purchases.",
+      "Put your marketing efforts behind clear goals, measurable actions and results you can track.",
   },
   {
     number: "04",
@@ -31,12 +37,6 @@ const services = [
     title: "E-commerce",
     description:
       "Conversion-focused online experiences designed to turn visitors into loyal customers.",
-  },
-  {
-    number: "06",
-    title: "Performance Marketing",
-    description:
-      "Put your marketing efforts behind clear goals, measurable actions and results you can track.",
   },
 ];
 

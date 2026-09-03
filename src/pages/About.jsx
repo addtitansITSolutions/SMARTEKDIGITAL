@@ -13,7 +13,6 @@ const About = () => {
         <WhatDrivesUs />
         {/* More About sections will come here */}
       </main>
-
       <Footer />
     </>
   );

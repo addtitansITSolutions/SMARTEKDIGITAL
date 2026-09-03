@@ -14,11 +14,11 @@ const AboutHero = () => {
             transition={{ duration: 0.7 }}
             className="relative"
           >
-            <div className="aspect-square w-full max-w-[560px] min-h-[500px] overflow-hidden rounded-xl">
+            <div className="aspect-square w-full max-w-[560px] overflow-hidden rounded-xl">
               <img
                 src="/Aboutus/about-us-smartek.jpg"
                 alt="Smartek Digital"
-                className="h-full w-full min-h-[500px] object-cover"
+                className="block h-full w-full object-cover"
               />
             </div>
 
