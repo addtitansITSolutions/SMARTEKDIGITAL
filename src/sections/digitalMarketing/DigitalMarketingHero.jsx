@@ -99,7 +99,7 @@ const DigitalMarketingHero = () => {
 
               {/* Main Image */}
               <img
-                src="/HeroBg/digital-marketing-banner.webp"
+                src="/Services/DigitalMarketing.png"
                 alt="Digital Marketing"
                 className="h-full w-full object-cover"
               />

@@ -26,20 +26,32 @@ const services = [
       "Campaign Optimization",
     ],
   },
+  // {
+  //   number: "03",
+  //   title: "SEO",
+  //   description:
+  //     "Improve your organic presence with search strategies that bring your business closer to the people actively looking for what you offer.",
+  //   capabilities: [
+  //     "Technical SEO",
+  //     "On-Page SEO",
+  //     "Content Strategy",
+  //     "Search Visibility",
+  //   ],
+  // },
+  {
+  number: "04",
+  title: "E-commerce Marketing",
+  description:
+    "Turn online shoppers into loyal customers with data-driven strategies designed to increase product visibility, improve conversions, and drive sustainable e-commerce growth.",
+  capabilities: [
+    "E-commerce Strategy",
+    "Product Marketing",
+    "Conversion Optimization",
+    "Customer Retention",
+  ],
+},
   {
     number: "03",
-    title: "SEO",
-    description:
-      "Improve your organic presence with search strategies that bring your business closer to the people actively looking for what you offer.",
-    capabilities: [
-      "Technical SEO",
-      "On-Page SEO",
-      "Content Strategy",
-      "Search Visibility",
-    ],
-  },
-  {
-    number: "04",
     title: "Affiliate Marketing",
     description:
       "Expand your reach through performance-focused partnerships that connect your brand with relevant audiences and create new opportunities for scalable growth.",
@@ -52,18 +64,6 @@ const services = [
   },
   {
     number: "05",
-    title: "Influencer Marketing",
-    description:
-      "Connect your brand with influential voices and relevant communities through authentic campaigns designed to build awareness, trust, and engagement.",
-    capabilities: [
-      "Influencer Strategy",
-      "Creator Partnerships",
-      "Campaign Management",
-      "Performance Analytics",
-    ],
-  },
-  {
-    number: "06",
     title: "Mobile Performance Marketing",
     description:
       "Reach mobile-first audiences with targeted campaigns designed to drive app installs, engagement, conversions, and measurable mobile growth.",

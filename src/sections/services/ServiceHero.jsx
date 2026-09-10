@@ -106,10 +106,9 @@ const ServiceHero = () => {
               {[
                 ["01", "Digital Marketing" , "/services/digital-marketing"],
                 ["02", "Performance Marketing" , "/services/performance-marketing"],
-                ["03", "SEO" , "/services/seo"],
+                ["03", "Ecommerce Marketing" , "/services/ecommerce-marketing"],
                 ["04", "Affiliate Marketing" , "/services/affiliate-marketing"],
-                ["05", "Influencer Marketing" , "/services/influencer-marketing"],
-                ["06", "Mobile Performance Marketing" , "/services/mobile-performance-marketing"],
+                ["05", "Mobile Performance Marketing" , "/services/mobile-performance-marketing"],
               ].map(([number, service , link]) => (
                 <a
                   key={number}
