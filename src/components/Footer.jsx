@@ -10,11 +10,11 @@ const Footer = () => {
   ];
 
   const serviceLinks = [
-    { label: "Digital Marketing", href: "#services" },
-    { label: "Affiliate Marketing", href: "#affiliate" },
-    { label: "Performance Marketing", href: "#services" },
-    { label: "Mobile Performance Marketing", href: "#services" },
-    { label: "E-commerce", href: "#services" },
+    { label: "Digital Marketing", href: "/services/digital-marketing" },
+    { label: "Affiliate Marketing", href: "/services/affiliate-marketing" },
+    { label: "Performance Marketing", href: "/services/performance-marketing" },
+    { label: "E-commerce", href: "/services/ecommerce-marketing" },
+    { label: "Mobile Performance Marketing", href: "/services/mobile-performance-marketing" },
   ];
 
   const socialLinks = [
